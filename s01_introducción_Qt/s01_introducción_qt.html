@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Juan Morales del Olmo" />
+  <title>Introducción a Qt</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/css/reveal.min.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+
+  <link rel="stylesheet" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/style.css"/>
+
+  <link rel="stylesheet" media="print" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/css/print/pdf.css" />
+  <!--[if lt IE 9]>
+  <script src="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Introducción a Qt</h1>
+    <h2 class="author">Juan Morales del Olmo</h2>
+    <h3 class="date">22 de enero de 2015</h3>
+</section>
+
+<section><section id="introducción-a-qt" class="titleslide slide level1"><h1>Introducción a Qt</h1></section><section id="qué-es-qt" class="slide level2">
+<h1>Qué es Qt</h1>
+<iframe width="640" height="480" src="http://www.youtube.com/embed/FIs5YqzS4Bc" frameborder="1" allowfullscreen>
+<figure>
+<img src="../rsc/images/link.png" alt="http://www.youtube.com/embed/FIs5YqzS4Bc" /><figcaption><a href="http://www.youtube.com/embed/FIs5YqzS4Bc">http://www.youtube.com/embed/FIs5YqzS4Bc</a></figcaption>
+</figure>
+</iframe>
+
+</section><section class="slide level2">
+
+<ul>
+<li><p>Qt is a <strong>cross-platform</strong> application and <strong>UI framework</strong> for developers using <strong>C++</strong> or <strong>QML</strong>, a CSS &amp; <strong>JavaScript</strong> like language.</p></li>
+<li><p><em>Moto:</em> Write Once Deploy Everywhere</p></li>
+<li><p>Windows, Mac Os, X11, Wayland, Android, iOS, WinRT</p></li>
+<li>Casi una librería estándar de C++ (<em>sin plantillas</em>)
+<ul>
+<li><a href="http://doc.qt.io/qt-5/qtcore-index.html">http://doc.qt.io/qt-5/qtcore-index.html</a></li>
+</ul></li>
+<li><p>Oculta diferencias de plataformas</p></li>
+<li><p>Varios frameworks para hacer GUIs: QWidgets, QtQuick, QWebKit</p></li>
+<li><p>Licencia dual: GPL/LGPL y módulos comerciales</p></li>
+</ul>
+</section><section id="gui-frameworks" class="slide level2">
+<h1>GUI Frameworks</h1>
+<h4 id="qwidgets">QWidgets</h4>
+<ul>
+<li>C++</li>
+<li>Desktop</li>
+</ul>
+<h4 id="qtquick">QtQuick</h4>
+<ul>
+<li>QML / Javascript</li>
+<li>Móvil / Desktop</li>
+</ul>
+<h4 id="qwebkit">QWebKit</h4>
+<ul>
+<li>HTML, CSS, Javascript</li>
+<li>Lo vamos a ignorar</li>
+</ul>
+</section></section>
+<section><section id="programación-para-guis" class="titleslide slide level1"><h1>Programación para GUIs</h1></section><section id="programación-asíncrona" class="slide level2">
+<h1>Programación asíncrona</h1>
+<ul>
+<li><p>También llamado “inversión de control”</p></li>
+<li><p>Ortogonal a Orientación a objetos, funcional, procedural</p></li>
+<li><p>Un programa ya no es una serie de pasos con principio y fin determinados.</p></li>
+<li><p>Diferente a programación concurrente y programación paralela.</p></li>
+</ul>
+</section><section id="implementación-p.asíncrona" class="slide level2">
+<h1>Implementación (p. asíncrona)</h1>
+<ul>
+<li><p>Control de flujo: <strong>Callbacks</strong> o programación <strong>reactiva</strong></p></li>
+<li><p><strong>Loop infinito</strong> (Normalmente sin espera activa)</p></li>
+<li><p><strong>Cola de eventos</strong> (Con o sin prioridades)</p></li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="implementación-en-qt">Implementación en QT</h3>
+<ul>
+<li><p>Control de flujo:</p>
+<ul>
+<li>En <strong>QWidgets y QWebkit</strong>: Callbacks
+<ul>
+<li><strong>SIGNAL/SLOT</strong> gracias al MOC</li>
+<li><code>void \*</code> no chequea tipos</li>
+<li>No había lambdas hasta C++11</li>
+</ul></li>
+<li>En <strong>QtQuick</strong>: Programación reactiva
+<ul>
+<li>Bindings implícitos y explícitos</li>
+</ul></li>
+</ul></li>
+<li>Loop infinito: Explícito
+<ul>
+<li><p><code>QEventLoop</code> es la clase que lo implementa</p>
+<pre><code>QApplication.exec();</code></pre></li>
+</ul></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li>Cola de eventos: Implícita
+<ul>
+<li>Tiene prioridad</li>
+<li>Eventos de Ratón (<code>QMouseEvent</code>), Teclado (<code>QKeyEvent</code>) o alarmas (<code>QTimerEvent</code>)</li>
+<li><p>Internos (<code>QResizeEvent</code>, <code>QPaintEvent</code>)</p>
+<pre><code>QCoreApplication::sendEvent(); // Inmediato
+QCoreApplication::postEvent(); // Se encola y el event loop lo notifica</code></pre></li>
+</ul></li>
+</ul>
+<p>Profundiza: <a href="http://doc.qt.io/qt-5/eventsandfilters.html">http://doc.qt.io/qt-5/eventsandfilters.html</a></p>
+</section><section id="programación-declarativa" class="slide level2">
+<h1>Programación declarativa</h1>
+<ul>
+<li>Contraparte a programación imperativa</li>
+<li>Subtipos de programación declarativa:
+<ul>
+<li>programación lógica: <em>Prolog</em></li>
+<li>programación funcional: <em>Haskell</em></li>
+<li>programación algebraica: <em>SQL</em></li>
+</ul></li>
+<li><p>Tiende a ser lo más eficaz (facilidad de código) para interfaces gráficos</p></li>
+<li>PROS:
+<ul>
+<li>Definir la interfaz (vs <em>ir creándola</em>)</li>
+<li><em>El diablo está en el estado</em></li>
+</ul></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Qt Designer crea .ui (XML declarativo) que con MOC se convierte en imperativo (.h)</p></li>
+<li>QML es un lenguaje declarativo
+<ul>
+<li>El Javascript imperativo es mínimo</li>
+</ul></li>
+<li><p>HTML es declarativo</p></li>
+</ul>
+</section><section id="herramientas-de-desarrollo" class="slide level2">
+<h1>Herramientas de desarrollo</h1>
+<ul>
+<li>MOC</li>
+<li>Qmake</li>
+<li>Qt Designer</li>
+<li>UIC</li>
+<li><p>RCC</p></li>
+<li><p><strong>QtCreator</strong></p></li>
+</ul>
+</section><section id="modelo-de-renderizado" class="slide level2">
+<h1>Modelo de renderizado</h1>
+<ul>
+<li>Thread principal hace el renderizado
+<ul>
+<li><strong>Ojo:</strong> No pintar desde otro thread</li>
+<li>Tareas pesadas no deben bloquear el main thread</li>
+</ul></li>
+<li><p>Evento QPaintEvent cuando se repinta</p></li>
+<li><p>Se puede forzar con <code>update()</code></p></li>
+<li><p>QML acelarado por hardware</p></li>
+</ul>
+</section><section id="jerarquía-de-widgets" class="slide level2">
+<h1>Jerarquía de Widgets</h1>
+<ul>
+<li><p>Patron de diseño principal para desarrollar GUIs</p></li>
+<li>Soportado por la jerarquía en la gestión de memoria de <code>QObjects</code></li>
+<li>Criterios de visibilidad/layout afectan a hijos</li>
+<li><p>El manejo de eventos se transmite por la jerarquía</p></li>
+</ul>
+</section><section id="foco" class="slide level2">
+<h1>Foco</h1>
+<ul>
+<li>Foco: (metáfora de atención del usuario)
+<ul>
+<li>Sobre qué interactúa el usuario</li>
+<li>Es un modo (por tanto conlleva errores)</li>
+<li>Muy extendido en Desktop, menos en Móvil</li>
+</ul></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/lib/js/head.min.js"></script>
+  <script src="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: false,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+//          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/css/reveal.min.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+
+  <link rel="stylesheet" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/style.css"/>
+
+  <link rel="stylesheet" media="print" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/css/print/pdf.css" />
+  <!--[if lt IE 9]>
+  <script src="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="práctica-1" class="slide level1">
+<h1>Práctica 1</h1>
+<figure>
+<img src="todo-c++.png" alt="todo" /><figcaption>todo</figcaption>
+</figure>
+<h2 id="pasos-sugeridos">Pasos sugeridos</h2>
+<ol type="1">
+<li>Diseñar la interfaz como en la imágen</li>
+<li>Conectar la señar triggered de la acción del menú Quit:</li>
+</ol>
+<ul>
+<li>Crear el slot al que vas a conectar la señal</li>
+<li>Poner un qDebug(“foo”) para comprobar que está conectado</li>
+<li>conectar la señal deseada al slot recién creado</li>
+</ul>
+<ol start="3" type="1">
+<li>Conectar el slot un slot llamado onItemAdded al click en el botón</li>
+</ol>
+<ul>
+<li>Este slot añadirá el texto de la línea de entrada a la lista de tareas</li>
+</ul>
+<ol start="4" type="1">
+<li>Borrar tareas de la lista:</li>
+</ol>
+<ul>
+<li>Reimplementar <em>keyPressEvent</em> en Todo para capturar los Delete y BackSpace</li>
+<li>Eliminar la tarea seleccionada</li>
+</ul>
+</section>
+<section id="qué-mejorarías" class="slide level1">
+<h1>¿Qué mejorarías?</h1>
+<ul>
+<li>Recuperarnos de los errores</li>
+<li>Undo/Redo al eliminar una tarea</li>
+<li>Todas las tareas son editables</li>
+<li>Visibilidad en las opciones que podemos hacer sobre una tarea</li>
+<li>Botones para eliminar/completar/editar cada tarea</li>
+<li>Acelerar la interacción para los expertos</li>
+<li>Atajo para el quit “Control-q”</li>
+<li>Conectar el <em>returnPressed</em> del <em>inputText</em> al mismo método que el botón</li>
+<li><p>Ordenar los TAB para pasar rápido del <em>inputText</em> a la lista</p></li>
+<li><strong>Dependiendo de requisitos:</strong></li>
+<li>Acercarnos más al modelo mental de una lista de tareas:
+<ul>
+<li>Las completadas se tachan y se ven tachadas</li>
+</ul></li>
+<li><p>Barra general de progreso de las tareas anotadas Vs completadas</p></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/lib/js/head.min.js"></script>
+  <script src="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: false,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+//          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+  </body>
+</html>
