@@ -41,16 +41,28 @@
 </section><section class="slide level2">
 
 <ul>
-<li><p>Qt is a <strong>cross-platform</strong> application and <strong>UI framework</strong> for developers using <strong>C++</strong> or <strong>QML</strong>, a CSS &amp; <strong>JavaScript</strong> like language.</p></li>
-<li><p><em>Moto:</em> Write Once Deploy Everywhere</p></li>
-<li><p>Windows, Mac Os, X11, Wayland, Android, iOS, WinRT</p></li>
-<li>Casi una librería estándar de C++ (<em>sin plantillas</em>)
+<li>Qt is a <strong>cross-platform</strong> application and <strong>UI framework</strong> for developers using <strong>C++</strong> or <strong>QML</strong>, a CSS &amp; <strong>JavaScript</strong> like language.</li>
+</ul>
 <ul>
-<li><a href="http://doc.qt.io/qt-5/qtcore-index.html">http://doc.qt.io/qt-5/qtcore-index.html</a></li>
+<li class="fragment"><em>Moto:</em> Write Once Deploy Everywhere</li>
+</ul>
+<ul>
+<li class="fragment">Windows, Mac Os, X11, Wayland, Android, iOS, WinRT</li>
+</ul>
+<ul>
+<li class="fragment">Casi una librería estándar de C++ (<em>sin plantillas</em>)
+<ul>
+<li class="fragment"><a href="http://doc.qt.io/qt-5/qtcore-index.html">http://doc.qt.io/qt-5/qtcore-index.html</a></li>
 </ul></li>
-<li><p>Oculta diferencias de plataformas</p></li>
-<li><p>Varios frameworks para hacer GUIs: QWidgets, QtQuick, QWebKit</p></li>
-<li><p>Licencia dual: GPL/LGPL y módulos comerciales</p></li>
+</ul>
+<ul>
+<li class="fragment">Oculta diferencias de plataformas</li>
+</ul>
+<ul>
+<li class="fragment">Varios frameworks para hacer GUIs: QWidgets, QtQuick, QWebKit</li>
+</ul>
+<ul>
+<li class="fragment">Licencia dual: GPL/LGPL y módulos comerciales</li>
 </ul>
 </section><section id="gui-frameworks" class="slide level2">
 <h1>GUI Frameworks</h1>
@@ -69,43 +81,55 @@
 <li>HTML, CSS, Javascript</li>
 <li>Lo vamos a ignorar</li>
 </ul>
+<p><a href="http://doc.qt.io/qt-5/topics-ui.html">http://doc.qt.io/qt-5/topics-ui.html</a></p>
 </section></section>
 <section><section id="programación-para-guis" class="titleslide slide level1"><h1>Programación para GUIs</h1></section><section id="programación-asíncrona" class="slide level2">
 <h1>Programación asíncrona</h1>
 <ul>
-<li><p>También llamado “inversión de control”</p></li>
-<li><p>Ortogonal a Orientación a objetos, funcional, procedural</p></li>
-<li><p>Un programa ya no es una serie de pasos con principio y fin determinados.</p></li>
-<li><p>Diferente a programación concurrente y programación paralela.</p></li>
+<li>También llamado “inversión de control”</li>
+</ul>
+<ul>
+<li class="fragment">Ortogonal a Orientación a objetos, funcional, procedural</li>
+</ul>
+<ul>
+<li class="fragment">Un programa ya no es una serie de pasos con principio y fin determinados.</li>
+</ul>
+<ul>
+<li class="fragment">Diferente a programación concurrente y programación paralela.</li>
 </ul>
 </section><section id="implementación-p.asíncrona" class="slide level2">
 <h1>Implementación (p. asíncrona)</h1>
 <ul>
-<li><p>Control de flujo: <strong>Callbacks</strong> o programación <strong>reactiva</strong></p></li>
-<li><p><strong>Loop infinito</strong> (Normalmente sin espera activa)</p></li>
-<li><p><strong>Cola de eventos</strong> (Con o sin prioridades)</p></li>
+<li class="fragment">Control de flujo: <strong>Callbacks</strong> o programación <strong>reactiva</strong></li>
+</ul>
+<ul>
+<li class="fragment"><strong>Loop infinito</strong> (Normalmente sin espera activa)</li>
+</ul>
+<ul>
+<li class="fragment"><strong>Cola de eventos</strong> (Con o sin prioridades)</li>
 </ul>
 </section><section class="slide level2">
 
 <h3 id="implementación-en-qt">Implementación en QT</h3>
 <ul>
-<li><p>Control de flujo:</p>
+<li class="fragment">Control de flujo:
 <ul>
-<li>En <strong>QWidgets y QWebkit</strong>: Callbacks
+<li class="fragment">En <strong>QWidgets y QWebkit</strong>: Callbacks
 <ul>
-<li><strong>SIGNAL/SLOT</strong> gracias al MOC</li>
-<li><code>void \*</code> no chequea tipos</li>
-<li>No había lambdas hasta C++11</li>
+<li class="fragment"><strong>SIGNAL/SLOT</strong> gracias al MOC</li>
+<li class="fragment"><code>void \*</code> no chequea tipos</li>
+<li class="fragment">No había lambdas hasta C++11<br /></li>
 </ul></li>
-<li>En <strong>QtQuick</strong>: Programación reactiva
+<li class="fragment">En <strong>QtQuick</strong>: Programación reactiva
 <ul>
-<li>Bindings implícitos y explícitos</li>
+<li class="fragment">Bindings implícitos y explícitos</li>
 </ul></li>
 </ul></li>
-<li>Loop infinito: Explícito
+</ul>
 <ul>
-<li><p><code>QEventLoop</code> es la clase que lo implementa</p>
-<pre><code>QApplication.exec();</code></pre></li>
+<li class="fragment">Loop infinito: Explícito
+<ul>
+<li class="fragment"><code>QEventLoop</code> es la clase que lo implementa QApplication.exec();</li>
 </ul></li>
 </ul>
 </section><section class="slide level2">
@@ -124,39 +148,50 @@ QCoreApplication::postEvent(); // Se encola y el event loop lo notifica</code></
 </section><section id="programación-declarativa" class="slide level2">
 <h1>Programación declarativa</h1>
 <ul>
-<li>Contraparte a programación imperativa</li>
-<li>Subtipos de programación declarativa:
+<li class="fragment">Contraparte a programación imperativa</li>
+<li class="fragment">Subtipos de programación declarativa:
 <ul>
-<li>programación lógica: <em>Prolog</em></li>
-<li>programación funcional: <em>Haskell</em></li>
-<li>programación algebraica: <em>SQL</em></li>
+<li class="fragment">programación lógica: <em>Prolog</em></li>
+<li class="fragment">programación funcional: <em>Haskell</em></li>
+<li class="fragment">programación algebraica: <em>SQL</em></li>
 </ul></li>
-<li><p>Tiende a ser lo más eficaz (facilidad de código) para interfaces gráficos</p></li>
-<li>PROS:
+<li class="fragment">Tiende a ser lo más eficaz (facilidad de código) para interfaces gráficos</li>
+</ul>
 <ul>
-<li>Definir la interfaz (vs <em>ir creándola</em>)</li>
-<li><em>El diablo está en el estado</em></li>
+<li class="fragment">PROS:
+<ul>
+<li class="fragment">Definir la interfaz (vs <em>ir creándola</em>)</li>
+<li class="fragment"><em>El diablo está en el estado</em></li>
 </ul></li>
 </ul>
 </section><section class="slide level2">
 
 <ul>
-<li><p>Qt Designer crea .ui (XML declarativo) que con MOC se convierte en imperativo (.h)</p></li>
-<li>QML es un lenguaje declarativo
+<li class="fragment">Qt Designer crea .ui (XML declarativo) que con MOC se convierte en imperativo (.h)</li>
+</ul>
 <ul>
-<li>El Javascript imperativo es mínimo</li>
+<li class="fragment">QML es un lenguaje declarativo
+<ul>
+<li class="fragment">El Javascript imperativo es mínimo</li>
 </ul></li>
-<li><p>HTML es declarativo</p></li>
+</ul>
+<ul>
+<li class="fragment">HTML es declarativo</li>
 </ul>
 </section><section id="herramientas-de-desarrollo" class="slide level2">
 <h1>Herramientas de desarrollo</h1>
 <ul>
-<li>MOC</li>
-<li>Qmake</li>
-<li>Qt Designer</li>
-<li>UIC</li>
-<li><p>RCC</p></li>
-<li><p><strong>QtCreator</strong></p></li>
+<li class="fragment">MOC</li>
+<li class="fragment">Qmake</li>
+<li class="fragment">Qt Designer
+<ul>
+<li class="fragment"><a href="http://doc.qt.io/qt-5/qtdesigner-manual.html">http://doc.qt.io/qt-5/qtdesigner-manual.html</a></li>
+</ul></li>
+<li class="fragment">UIC</li>
+<li class="fragment">RCC</li>
+</ul>
+<ul>
+<li class="fragment"><strong>QtCreator</strong></li>
 </ul>
 </section><section id="modelo-de-renderizado" class="slide level2">
 <h1>Modelo de renderizado</h1>
@@ -166,26 +201,34 @@ QCoreApplication::postEvent(); // Se encola y el event loop lo notifica</code></
 <li><strong>Ojo:</strong> No pintar desde otro thread</li>
 <li>Tareas pesadas no deben bloquear el main thread</li>
 </ul></li>
-<li><p>Evento QPaintEvent cuando se repinta</p></li>
-<li><p>Se puede forzar con <code>update()</code></p></li>
-<li><p>QML acelarado por hardware</p></li>
+</ul>
+<ul>
+<li class="fragment">Evento QPaintEvent cuando se repinta</li>
+</ul>
+<ul>
+<li class="fragment">Se puede forzar con <code>update()</code></li>
+</ul>
+<ul>
+<li class="fragment">QML acelarado por hardware</li>
 </ul>
 </section><section id="jerarquía-de-widgets" class="slide level2">
 <h1>Jerarquía de Widgets</h1>
 <ul>
-<li><p>Patron de diseño principal para desarrollar GUIs</p></li>
-<li>Soportado por la jerarquía en la gestión de memoria de <code>QObjects</code></li>
-<li>Criterios de visibilidad/layout afectan a hijos</li>
-<li><p>El manejo de eventos se transmite por la jerarquía</p></li>
+<li>Patron de diseño principal para desarrollar GUIs</li>
+</ul>
+<ul>
+<li class="fragment">La gestión de memoria de <code>QObjects</code> se realiza en jerarquía también</li>
+<li class="fragment">Criterios de visibilidad/layout afectan a hijos</li>
+<li class="fragment">El manejo de eventos se transmite por la jerarquía</li>
 </ul>
 </section><section id="foco" class="slide level2">
 <h1>Foco</h1>
 <ul>
-<li>Foco: (metáfora de atención del usuario)
+<li class="fragment">Foco: (metáfora de atención del usuario)
 <ul>
-<li>Sobre qué interactúa el usuario</li>
-<li>Es un modo (por tanto conlleva errores)</li>
-<li>Muy extendido en Desktop, menos en Móvil</li>
+<li class="fragment">Sobre qué interactúa el usuario</li>
+<li class="fragment">Es un modo (por tanto conlleva errores)</li>
+<li class="fragment">Muy extendido en Desktop, menos en Móvil</li>
 </ul></li>
 </ul>
 </section></section>
