@@ -71,7 +71,10 @@ body {
     display: none;
 }
 
-.reveal ul {line-height: 1.2em;}
+.reveal ul, .reveal ol {
+    line-height: 1.2em;
+    display: block;
+    margin: 0px 0px 1em 1em;}
 
 .reveal pre {width: 100%;}
 

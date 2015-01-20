@@ -56,3 +56,4 @@ Repaso y comentario de las implementaciones de la práctica 2
 
 ### Sesión 5 ###
 
+* Diseño en grupo de una interfaz compleja

@@ -7,15 +7,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/css/reveal.min.css"/>
+  <link rel="stylesheet" href="../../rsc/reveal.js/css/reveal.min.css"/>
     <style type="text/css">code{white-space: pre;}</style>
 
-  <link rel="stylesheet" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/css/theme/simple.css" id="theme">
-  <link rel="stylesheet" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/style.css"/>
+  <link rel="stylesheet" href="../../rsc/reveal.js/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="../../rsc/style.css"/>
 
-  <link rel="stylesheet" media="print" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/css/print/pdf.css" />
+  <link rel="stylesheet" media="print" href="../../rsc/reveal.js/css/print/pdf.css" />
   <!--[if lt IE 9]>
-  <script src="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/lib/js/html5shiv.js"></script>
+  <script src="../../rsc/reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
 
 </head>
@@ -24,60 +24,113 @@
     <div class="slides">
 
 
-<section id="práctica-1" class="slide level1">
-<h1>Práctica 1</h1>
+<section id="ejercicio-1" class="slide level2">
+<h1>Ejercicio 1</h1>
 <figure>
-<img src="todo-c++.png" alt="todo" /><figcaption>todo</figcaption>
+<img src="todo-c++.png" alt="TODO con QWidgets" /><figcaption>TODO con QWidgets</figcaption>
 </figure>
-<h2 id="pasos-sugeridos">Pasos sugeridos</h2>
-<ol type="1">
-<li>Diseñar la interfaz como en la imágen</li>
-<li>Conectar la señar triggered de la acción del menú Quit:</li>
-</ol>
+</section>
+<section id="entrega" class="slide level2">
+<h1>Entrega</h1>
 <ul>
-<li>Crear el slot al que vas a conectar la señal</li>
-<li>Poner un qDebug(“foo”) para comprobar que está conectado</li>
-<li>conectar la señal deseada al slot recién creado</li>
+<li>La finalidad es que os “manchéis las manos” con:
+<ul>
+<li>Qt Designer y el sistema de QWidgets</li>
+<li>La documentación de Qt</li>
+</ul></li>
+<li><strong>1 Semana</strong></li>
 </ul>
-<ol start="3" type="1">
-<li>Conectar el slot un slot llamado onItemAdded al click en el botón</li>
-</ol>
 <ul>
-<li>Este slot añadirá el texto de la línea de entrada a la lista de tareas</li>
+<li class="fragment">El próximo martes después de la clase reviso e-mail
+<ul>
+<li class="fragment">juan.morales@live.u-tad.com</li>
+</ul></li>
 </ul>
-<ol start="4" type="1">
-<li>Borrar tareas de la lista:</li>
-</ol>
 <ul>
-<li>Reimplementar <em>keyPressEvent</em> en Todo para capturar los Delete y BackSpace</li>
-<li>Eliminar la tarea seleccionada</li>
+<li class="fragment">Cuanta más funcionalidad más nota</li>
+</ul>
+<ul>
+<li class="fragment"><strong>20% de la nota final de la asignatura</strong></li>
 </ul>
 </section>
-<section id="qué-mejorarías" class="slide level1">
-<h1>¿Qué mejorarías?</h1>
+<section id="pasos-sugeridos" class="slide level2">
+<h1>Pasos sugeridos</h1>
+<ol type="1">
+<li class="fragment">Diseñar la interfaz como en la imágen</li>
+</ol>
+<ol start="2" type="1">
+<li class="fragment">Conectar la señar triggered de la acción del menú Quit:
 <ul>
-<li>Recuperarnos de los errores</li>
+<li class="fragment">Crear el slot al que vas a conectar la señal</li>
+<li class="fragment">Poner un qDebug(“foo”) para comprobar que está conectado</li>
+<li class="fragment">conectar la señal deseada al slot recién creado</li>
+</ul></li>
+</ol>
+</section>
+<section id="pasos-sugeridos-1" class="slide level2">
+<h1>Pasos sugeridos</h1>
+<ol start="3" type="1">
+<li class="fragment">Conectar un slot llamado onItemAdded al click en el botón
+<ul>
+<li class="fragment">Este slot añadirá el texto de la línea de entrada a la lista de tareas</li>
+</ul></li>
+</ol>
+<ol start="4" type="1">
+<li class="fragment">Borrar tareas de la lista:
+<ul>
+<li class="fragment">Reimplementar <em>keyPressEvent</em> en Todo para capturar los Delete y BackSpace</li>
+<li class="fragment">Eliminar la tarea seleccionada</li>
+</ul></li>
+</ol>
+</section>
+<section id="qué-mejorarías" class="slide level2">
+<h1>¿Qué mejorarías?</h1>
+<div class="fragment">
+<ol type="1">
+<li>Recuperarnos de los errores
+<ul>
 <li>Undo/Redo al eliminar una tarea</li>
 <li>Todas las tareas son editables</li>
-<li>Visibilidad en las opciones que podemos hacer sobre una tarea</li>
-<li>Botones para eliminar/completar/editar cada tarea</li>
-<li>Acelerar la interacción para los expertos</li>
-<li>Atajo para el quit “Control-q”</li>
-<li>Conectar el <em>returnPressed</em> del <em>inputText</em> al mismo método que el botón</li>
-<li><p>Ordenar los TAB para pasar rápido del <em>inputText</em> a la lista</p></li>
-<li><strong>Dependiendo de requisitos:</strong></li>
-<li>Acercarnos más al modelo mental de una lista de tareas:
-<ul>
-<li>Las completadas se tachan y se ven tachadas</li>
 </ul></li>
-<li><p>Barra general de progreso de las tareas anotadas Vs completadas</p></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li>Visibilidad en las opciones que podemos hacer sobre una tarea
+<ul>
+<li>Botones para eliminar/completar/editar cada tarea</li>
+</ul></li>
+</ol>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="fragment">
+<ol start="3" type="1">
+<li>Acelerar la interacción para los expertos
+<ul>
+<li>Conectar el <em>returnPressed</em> del <em>inputText</em> al mismo método que el botón</li>
+<li>Atajo para el quit “Control-q”</li>
+<li>Ordenar los TAB para pasar rápido del <em>inputText</em> a la lista</li>
+</ul></li>
+</ol>
+<ul>
+<li class="fragment"><strong>Dependiendo de requisitos:</strong>
+<ul>
+<li class="fragment">Acercarnos más al modelo mental de una lista de tareas:
+<ul>
+<li class="fragment">Las completadas se tachan y se ven tachadas</li>
+</ul></li>
+<li class="fragment">Barra general de progreso de las tareas anotadas Vs completadas</li>
+</ul></li>
 </ul>
+</div>
 </section>
     </div>
   </div>
 
-  <script src="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/lib/js/head.min.js"></script>
-  <script src="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/js/reveal.min.js"></script>
+  <script src="../../rsc/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../rsc/reveal.js/js/reveal.min.js"></script>
 
   <script>
 
@@ -93,12 +146,12 @@
 
         // Optional libraries used to extend on reveal.js
         dependencies: [
-          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-//          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
-//          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+          { src: '../../rsc/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../rsc/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../../rsc/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../../rsc/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+//          { src: '../../rsc/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: '../../rsc/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 ]});
     </script>
   </body>

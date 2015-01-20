@@ -5,6 +5,7 @@ BASEDIR=`pwd`
 #
 # Find a supradirectory with pandoc & reveal resource dir 
 #
+RSC=rsc
 while :
 do
     if [[ `pwd` == / ]]; then
@@ -12,10 +13,9 @@ do
 	exit
     else
 	if [[ -e "rsc"  && -e "rsc/build.sh" ]]; then
-	    RSC=`pwd`/rsc
 	    break
 	fi
-
+	RSC=../$RSC
 	cd ..
     fi
 done
