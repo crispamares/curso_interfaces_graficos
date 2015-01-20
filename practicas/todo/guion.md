@@ -39,19 +39,19 @@
 
 . . .
 
-1. Recuperarnos de los errores
+* Recuperarnos de los errores
     - Undo/Redo al eliminar una tarea
 	- Todas las tareas son editables
 
 . . .
 
-2. Visibilidad en las opciones que podemos hacer sobre una tarea
+* Visibilidad en las opciones que podemos hacer sobre una tarea
 	- Botones para eliminar/completar/editar cada tarea
 
 -----------------------
 . . .
 
-3. Acelerar la interacción para los expertos
+* Acelerar la interacción para los expertos
 	- Conectar el *returnPressed* del *inputText* al mismo método que el botón
 	- Atajo para el quit "Control-q"
 	- Ordenar los TAB para pasar rápido del *inputText* a la lista
