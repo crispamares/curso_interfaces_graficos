@@ -8,15 +8,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/css/reveal.min.css"/>
+  <link rel="stylesheet" href="../rsc/reveal.js/css/reveal.min.css"/>
     <style type="text/css">code{white-space: pre;}</style>
 
-  <link rel="stylesheet" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/css/theme/simple.css" id="theme">
-  <link rel="stylesheet" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/style.css"/>
+  <link rel="stylesheet" href="../rsc/reveal.js/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="../rsc/style.css"/>
 
-  <link rel="stylesheet" media="print" href="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/css/print/pdf.css" />
+  <link rel="stylesheet" media="print" href="../rsc/reveal.js/css/print/pdf.css" />
   <!--[if lt IE 9]>
-  <script src="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/lib/js/html5shiv.js"></script>
+  <script src="../rsc/reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
 
 </head>
@@ -27,7 +27,7 @@
 <section>
     <h1 class="title">Introducción a Qt</h1>
     <h2 class="author">Juan Morales del Olmo</h2>
-    <h3 class="date">22 de enero de 2015</h3>
+    <h3 class="date">20 de enero de 2015</h3>
 </section>
 
 <section><section id="introducción-a-qt" class="titleslide slide level1"><h1>Introducción a Qt</h1></section><section id="qué-es-qt" class="slide level2">
@@ -192,8 +192,8 @@ QCoreApplication::postEvent(); // Se encola y el event loop lo notifica</code></
     </div>
   </div>
 
-  <script src="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/lib/js/head.min.js"></script>
-  <script src="/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/js/reveal.min.js"></script>
+  <script src="../rsc/reveal.js/lib/js/head.min.js"></script>
+  <script src="../rsc/reveal.js/js/reveal.min.js"></script>
 
   <script>
 
@@ -209,12 +209,12 @@ QCoreApplication::postEvent(); // Se encola y el event loop lo notifica</code></
 
         // Optional libraries used to extend on reveal.js
         dependencies: [
-          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-//          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
-//          { src: '/home/crispamares/clases/u-tad/2015/ui/material/curso_ui/rsc/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+          { src: '../rsc/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../rsc/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../rsc/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../rsc/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+//          { src: '../rsc/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: '../rsc/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 ]});
     </script>
   </body>
