@@ -14,7 +14,7 @@ Primera práctica: Implementar el interfaz del TODO con QWidgets
 
 #### Transparencias ####
 
-* [Introducción a Qt](s01_introducción_Qt/s01_introducción_Qt.html)
+* [Introducción a Qt](s01_introduccion_Qt/s01_introduccion_Qt.html)
 
 ### Sesión 2 ###
 
