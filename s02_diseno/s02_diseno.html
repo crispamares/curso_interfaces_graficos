@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Juan Morales del Olmo" />
+  <title>Metodología de diseño de interfaces usables</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../rsc/reveal.js/css/reveal.min.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+
+  <link rel="stylesheet" href="../rsc/reveal.js/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="../rsc/style.css"/>
+
+  <link rel="stylesheet" media="print" href="../rsc/reveal.js/css/print/pdf.css" />
+  <!--[if lt IE 9]>
+  <script src="../rsc/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Metodología de diseño de interfaces usables</h1>
+    <h2 class="author">Juan Morales del Olmo</h2>
+    <h3 class="date">27 de enero de 2015</h3>
+</section>
+
+<section><section id="interacción-hombre-máquina" class="titleslide slide level1"><h1>Interacción hombre-máquina</h1></section><section id="usabilidad" class="slide level2">
+<h1>Usabilidad</h1>
+<ul>
+<li>¿Cómo lo definiríais?</li>
+</ul>
+</section><section id="usabilidad-1" class="slide level2">
+<h1>Usabilidad</h1>
+<p>Según el ISO 9241 “Ergonomics of Human-System Interaction”, los objetivos son maximizar:</p>
+<ul>
+<li>Efectividad</li>
+<li>Eficiencia</li>
+<li>Satisfacción</li>
+</ul>
+</section><section class="slide level2">
+
+<p>Si nos centramos más en la práctica. Se puede medir y evaluar:</p>
+<ul>
+<li><p>Tiempo en aprender a realizar la tarea</p></li>
+<li><p>Velocidad de realización (de la tarea de <em>benchmark</em>)</p></li>
+<li><p>Ratios de error, ya sea de número como de tiempo en solucionarlos</p></li>
+<li><p>Tiempo que los usuarios recuerdan cómo usar la interfaz</p></li>
+<li><p>Satisfacción subjetiva</p></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li>¿ Cómo lo conseguimos ?</li>
+</ul>
+</section><section id="diseño-centrado-en-usuario" class="slide level2">
+<h1>Diseño centrado en usuario</h1>
+<ul>
+<li><p><strong>El usuario está involucrado en todas las etapas de diseño</strong></p>
+<ul>
+<li>Minimiza los riesgos más importantes:
+<ul>
+<li>No conocer al <strong>usuario</strong></li>
+<li>No conocer la <strong>tarea</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li>Marida mal con el modelo desarrollo software <em>en cascada</em>
+<ul>
+<li>Se nos dan unos requisitos… que pueden estar equivocados</li>
+<li>Lo que entregamos al final del proceso no tiene nada que ver con lo que el usuario esperaba</li>
+</ul></li>
+</ul>
+</section><section class="slide level2">
+
+<figure>
+<img src="../rsc/images/espiral.jpg" />
+</figure>
+</section><section class="slide level2">
+
+<ul>
+<li>Hay que utilizar un desarrollo iterativo
+<ul>
+<li>Se va en espiral:
+<ul>
+<li>Requisitos -&gt; Diseño -&gt; Implementación -&gt; Pruebas -&gt; …</li>
+</ul></li>
+<li>Basado en prototipos y/o funcionalidades</li>
+</ul></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li>Metodologías ágiles de desarrollo (ej: <em>SCRUM</em>) se adaptan muy bien
+<ul>
+<li>Invitar al usuario a las reuniones de diseño</li>
+<li>Ciclos cortos (sprints de pocas semanas)</li>
+</ul></li>
+</ul>
+</section><section id="conocer-al-usuario" class="slide level2">
+<h1>Conocer al usuario</h1>
+<ul>
+<li>Tipificar al usuario según:
+<ul>
+<li>Usuario novato</li>
+<li>Con conocimiento pero uso intermitente</li>
+<li>Experto y con uso frecuente del sistema (<em>Power user</em>)</li>
+</ul></li>
+<li>Experiencia con ordenadores (u otras interfaces similares)</li>
+<li>Discapacidades motoras y sensoriales</li>
+<li>Rangos de edad</li>
+<li>Entorno de trabajo</li>
+</ul>
+</section><section id="conocer-la-tarea" class="slide level2">
+<h1>Conocer la tarea</h1>
+<p>Engloba lo que en educción de requisitos se llama: <em>Requisitos funcionales y no funcionales</em></p>
+<ul>
+<li class="fragment">Identificar las tares de Alto nivel y descomponerlas en tareas de bajo nivel</li>
+<li class="fragment">Frecuencia de cada tarea (ej: poco usadas a menús)</li>
+<li class="fragment">Lenguaje del dominio de aplicación (menús, colores)</li>
+<li class="fragment">Tiempos que hay que satisfacer (ej: tiempo real, batch)</li>
+<li class="fragment">Sesión típica de trabajo (ej: uso esporádico, 8 horas al día)</li>
+<li class="fragment">Tolerancia a errores (ej: tarea crítica en central nuclear)</li>
+</ul>
+</section></section>
+<section><section id="técnicas-de-diseño" class="titleslide slide level1"><h1>Técnicas de diseño</h1></section><section id="qué-es-diseño" class="slide level2">
+<h1>¿ Qué es diseño ?</h1>
+<p><strong>Proceso</strong> previo a la realización en la <strong>búsqueda de una solución</strong> en cualquier campo</p>
+<ul>
+<li class="fragment">Espacio de diseño</li>
+<li class="fragment">Decisiones de diseño</li>
+</ul>
+</section><section id="qué-buscamos" class="slide level2">
+<h1>¿ Qué buscamos ?</h1>
+<div class="fragment">
+<figure>
+<img src="../rsc/images/cuatro-pilares.jpg" alt="© Designing the user interface. Shneiderman el al" /><figcaption>© Designing the user interface. Shneiderman el al</figcaption>
+</figure>
+</div>
+</section><section id="qué-proceso" class="slide level2">
+<h1>¿ Qué proceso ?</h1>
+</section><section class="slide level2">
+
+<figure>
+<img src="../rsc/images/guide.gif" alt="© Usability.gob" /><figcaption>© Usability.gob</figcaption>
+</figure>
+</section><section class="slide level2">
+
+<figure>
+<img src="../rsc/images/guide-2.gif" alt="Nos centramos en esto" /><figcaption>Nos centramos en esto</figcaption>
+</figure>
+</section><section id="técnicas" class="slide level2">
+<h1>Técnicas</h1>
+<ul>
+<li><p>Bocetos</p></li>
+<li><p>Escenarios</p></li>
+<li><p>Patrones de diseño</p></li>
+<li><p>Prototipos</p></li>
+</ul>
+</section><section id="bocetos-sketches-o-wireframes" class="slide level2">
+<h1>Bocetos (sketches o wireframes)</h1>
+<ul>
+<li>Diseño viene de <em>disegno</em>. Dibujo en italiano</li>
+</ul>
+<ul>
+<li class="fragment"><strong>La técnica más importante del diseño de interfaces es el bocetado</strong>
+<ul>
+<li class="fragment">No utilizar software de dibujo</li>
+<li class="fragment">“A mano”. Con lápiz y papel o pizarra.</li>
+</ul></li>
+</ul>
+<ul>
+<li class="fragment">Generar <strong>muchas</strong> ideas</li>
+</ul>
+<ul>
+<li class="fragment">Diseñar en grupo</li>
+</ul>
+</section><section class="slide level2">
+
+<figure>
+<img src="../rsc/images/muchas-ideas.jpg" alt="Diseño paralelo" /><figcaption>Diseño paralelo</figcaption>
+</figure>
+</section><section id="ejemplo-de-bocetos" class="slide level2">
+<h1>Ejemplo de bocetos</h1>
+</section><section id="escenarios" class="slide level2">
+<h1>Escenarios</h1>
+<p>Son historias de usuarios usando el sistema.</p>
+<ul>
+<li class="fragment">Concretas (con detalle), realistas pero imaginativas</li>
+<li class="fragment">Tiene que incluir los objetivos de los usuarios</li>
+<li class="fragment">Muestra el proceso para conseguir su objetivo</li>
+<li class="fragment">Desarrollan y concretan las tareas</li>
+</ul>
+<ul>
+<li class="fragment">Los usuarios son <em>personas</em> (estereotipos)</li>
+</ul>
+</section><section id="ejemplo-de-escenario" class="slide level2">
+<h1>Ejemplo de escenario</h1>
+<p>Tarea: “Buscar datos”</p>
+<p>Miguel, que es un veinteañero moderno, quiere poder zanjar todas las conversaciones de bar buscando con su móvil las respuestas sin enfadar a sus amigos con continuas búsquedas en Google. Mientras sus amigos hablan él escucha, pero cuando se enzarzan en una discusión demostrable, Miguel buscará en el móvil los datos que se debaten y se los mostrará a sus amigos.</p>
+</section><section id="storyboard" class="slide level2">
+<h1>Storyboard</h1>
+<ul>
+<li>Es un conjunto de bocetos que ilustran un escenario</li>
+</ul>
+<ul>
+<li class="fragment">Son los primeros prototipos de un diseño
+<ul>
+<li class="fragment">Muestran cómo el diseño puede ser usado para alcanzar un objetivo</li>
+</ul></li>
+</ul>
+</section><section id="prototipos" class="slide level2">
+<h1>Prototipos</h1>
+<ul>
+<li><strong>Sirven para comunicar rápido (antes de implementar) y rediseñar</strong></li>
+</ul>
+<ul>
+<li class="fragment">Son bocetos de “alta fidelidad”</li>
+</ul>
+<ul>
+<li class="fragment">Se pueden hacer con software que soporte interacción pero no es necesario.</li>
+</ul>
+<ul>
+<li class="fragment">Detallan la navegación, las reacciones y transiciones.</li>
+</ul>
+</section><section id="patrones-de-diseño" class="slide level2">
+<h1>Patrones de diseño</h1>
+<ul>
+<li class="fragment">Son soluciones comunes a problemas comunes</li>
+</ul>
+<ul>
+<li class="fragment">Mejoran la comunicación
+<ul>
+<li class="fragment">Son usados frecuentemente y se entienden</li>
+</ul></li>
+</ul>
+<ul>
+<li class="fragment">Limitan la libertad en el diseño (reducen el espacio de diseño)</li>
+</ul>
+</section><section id="patrones-de-diseño-1" class="slide level2">
+<h1>Patrones de diseño</h1>
+<ul>
+<li>Patrones generales:
+<ul>
+<li><a href="http://designinginterfaces.com/patterns/">http://designinginterfaces.com/patterns/</a></li>
+<li><a href="http://www.cs.helsinki.fi/u/salaakso/patterns/">http://www.cs.helsinki.fi/u/salaakso/patterns/</a></li>
+</ul></li>
+<li>Widgets
+<ul>
+<li>QtWidgets</li>
+<li>QtQuick Controls</li>
+</ul></li>
+</ul>
+</section><section id="resúmen" class="slide level2">
+<h1>Resúmen</h1>
+<ul>
+<li class="fragment">Genera muchas ideas</li>
+</ul>
+<ul>
+<li class="fragment">Plasma tus ideas utilizando bocetos, scenarios y storyboards</li>
+</ul>
+<ul>
+<li class="fragment">Evalúa y comunica pronto por medio de prototipos</li>
+</ul>
+<ul>
+<li class="fragment">Estudia patrones de diseño y utilízalos cuando encajen</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../rsc/reveal.js/lib/js/head.min.js"></script>
+  <script src="../rsc/reveal.js/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: false,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../rsc/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../rsc/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../rsc/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../rsc/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+//          { src: '../rsc/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: '../rsc/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+  </body>
+</html>
