@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Juan Morales del Olmo" />
+  <title>Introducción a QtQuick</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../rsc/reveal.js/css/reveal.min.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+
+  <link rel="stylesheet" href="../rsc/reveal.js/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="../rsc/style.css"/>
+
+  <link rel="stylesheet" media="print" href="../rsc/reveal.js/css/print/pdf.css" />
+  <!--[if lt IE 9]>
+  <script src="../rsc/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Introducción a QtQuick</h1>
+    <h2 class="author">Juan Morales del Olmo</h2>
+    <h3 class="date">27 de enero de 2015</h3>
+</section>
+
+<section><section id="introducción-a-qtquick" class="titleslide slide level1"><h1>Introducción a QtQuick</h1></section><section id="qml" class="slide level2">
+<h1>QML</h1>
+<ul>
+<li class="fragment">Lenguaje declarativo</li>
+</ul>
+<ul>
+<li class="fragment">Expresiones imperativas en Javascript</li>
+</ul>
+<ul>
+<li class="fragment">La sintaxis es similar a Javascript</li>
+</ul>
+<ul>
+<li class="fragment">Bindings reactivos</li>
+</ul>
+<ul>
+<li class="fragment">Profundiza: En la ayuda de Qt: “QML Applications”</li>
+</ul>
+</section><section id="qtquick" class="slide level2">
+<h1>QtQuick</h1>
+<ul>
+<li class="fragment">La librería estándar de QML
+<ul>
+<li class="fragment">El canvas gráfico (0,0 arriba a la izquierda)</li>
+<li class="fragment"><strong>Interacción:</strong> Touch, Mouse, Keyboard (con focus), Sensors</li>
+<li class="fragment"><strong>Posiciónes:</strong> bindings, anchors, <em>positioners</em> y Layouts</li>
+<li class="fragment">Estados, transiciones y animaciones</li>
+</ul></li>
+</ul>
+<ul>
+<li class="fragment">QtQuick Controls
+<ul>
+<li class="fragment">Implementación de QtWidgets en QML</li>
+</ul></li>
+</ul>
+<ul>
+<li class="fragment">QtQuick Layouts
+<ul>
+<li class="fragment">Implementación de layouts en QML (pantallas redimensionables)</li>
+</ul></li>
+</ul>
+</section><section id="sintaxis" class="slide level2">
+<h1>Sintaxis</h1>
+<pre><code>import QtQuick 2.0
+
+Rectangle {
+    id: miRectangulo              // identificador único
+
+    width: 40                     // propiedades definidas
+    height: 40
+    radius: 10
+    color: &quot;red&quot;
+
+    property int miNumero: 42     // definición de propiedades
+                                  //    -&gt;   onMiNumeroChanged
+
+    x : parent.width / 2          // posición con bindigns
+    y : parent.height / 2
+
+    MouseArea {
+        anchors.fill: parent      // tambien por id: miRectangulo
+        onClicked: {              // análogo a SIGNAL/SLOT
+            Qt.quit();
+        }
+    }
+ }</code></pre>
+</section><section id="modular" class="slide level2">
+<h1>Modular</h1>
+<ul>
+<li><p>Se reutiliza el código de los componentes</p></li>
+<li><p>Los módulos tienen componentes</p></li>
+<li><p>Normalmente un componente es un módulo</p></li>
+<li><p>También se pueden definir componentes <em>inline</em> con <code>Component</code></p></li>
+</ul>
+</section><section id="propiedades" class="slide level2">
+<h1>Propiedades</h1>
+<p>Se le pueden asignar valores en asignaciones imperativas o en <strong>bindings</strong> dinámicos</p>
+<pre><code>Item {
+    property int someNumber            // Con tipo
+    property string someString
+    property url someUrl
+
+    property var someNumber: 1.5       // Con var
+    property var someString: &quot;abc&quot;
+    property var someBool: true
+    property var someList: [1, 2, &quot;three&quot;, &quot;four&quot;]
+    property var someObject: Rectangle { width: 100; height: 100; color: &quot;red&quot; }
+
+    property Rectangle someRectangle   // Cualquier QML Type
+}</code></pre>
+</section><section id="propiedades-1" class="slide level2">
+<h1>Propiedades</h1>
+<p>Definen señales automáticamente</p>
+<pre><code>Rectangle {
+    property color previousColor
+    property color nextColor
+    onNextColorChanged: console.log(&quot;The next color will be: &quot; + nextColor.toString())
+}</code></pre>
+</section><section id="propiedades-2" class="slide level2">
+<h1>Propiedades</h1>
+<pre><code>Text {
+    //dot notation
+    font.pixelSize: 12
+    font.b: true
+}
+
+Text {
+    //group notation
+    font { pixelSize: 12; b: true }
+}
+
+Item {
+    property alias widgetLabel: label
+}</code></pre>
+</section><section id="señales" class="slide level2">
+<h1>Señales</h1>
+<pre><code>// SquareButton.qml
+Rectangle {
+    id: root
+
+    signal activated(real xPosition, real yPosition)
+    signal deactivated
+
+    width: 100; height: 100
+
+    MouseArea {
+        anchors.fill: parent
+        onPressed: root.activated(mouse.x, mouse.y)  // Así se emiten
+        onRelased: root.deactivated()
+    }
+}
+
+
+// myapplication.qml
+SquareButton {
+    onActivated: console.log(&quot;Activated at &quot; + xPosition + &quot;,&quot; + yPosition)
+    onDeactivated: console.log(&quot;Deactivated!&quot;)
+}</code></pre>
+</section><section id="métodos" class="slide level2">
+<h1>Métodos</h1>
+<pre><code>import QtQuick 2.0
+Rectangle {
+    id: rect
+
+    function calculateHeight() {    // Sintaxis de Javascript
+        return rect.width / 2;
+    }
+
+    width: 100
+    height: calculateHeight()
+}</code></pre>
+</section><section id="bindings" class="slide level2">
+<h1>Bindings</h1>
+<pre><code>Rectangle {
+    width: 100
+    height: width * 2
+
+    focus: true               // Puede tener el foco
+    Keys.onSpacePressed: {
+        height = width * 3    // No es un binding. Asignación estática
+    }
+}
+
+Rectangle {
+    width: 100
+    height: width * 2
+
+    focus: true
+    Keys.onSpacePressed: {
+        height = Qt.binding(function() { return width * 3 })
+    }
+}</code></pre>
+</section><section id="estados-y-transiciones" class="slide level2">
+<h1>Estados y transiciones</h1>
+<ul>
+<li class="fragment">Para GUIs medianamente complejas</li>
+</ul>
+<ul>
+<li class="fragment">Los estados tiene un nombre y una serie valores para propiedades</li>
+</ul>
+<ul>
+<li class="fragment">Permiten agrupar los valores definidos en cada momento de la interacción</li>
+</ul>
+<ul>
+<li class="fragment"><a href="http://doc.qt.io/qt-5/qtquick-usecase-animations.html">http://doc.qt.io/qt-5/qtquick-usecase-animations.html</a></li>
+</ul>
+</section><section id="posiciones-en-qtquick" class="slide level2">
+<h1>Posiciones en QtQuick</h1>
+<ul>
+<li>Originalmente diseñado para móviles (dimensiones fijas)</li>
+</ul>
+<ul>
+<li class="fragment">Se puede hacer a mano, con bindings, anchors o layouts</li>
+</ul>
+<ul>
+<li class="fragment"><a href="http://doc.qt.io/qt-5/qtquick-usecase-layouts.html">http://doc.qt.io/qt-5/qtquick-usecase-layouts.html</a></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../rsc/reveal.js/lib/js/head.min.js"></script>
+  <script src="../rsc/reveal.js/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: false,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../rsc/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../rsc/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../rsc/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../rsc/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+//          { src: '../rsc/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: '../rsc/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+  </body>
+</html>

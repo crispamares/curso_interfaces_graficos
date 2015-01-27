@@ -141,6 +141,19 @@ cualquier campo
 
 ## Ejemplo de bocetos ##
 
+--------------
+
+![](../rsc/images/sketch-1.jpg)
+
+--------------
+
+![](../rsc/images/sketch-2.jpg)
+
+--------------
+
+![Detalles](../rsc/images/sketch-detalle.jpg)
+
+
 ## Escenarios ##
 
 Son historias de usuarios usando el sistema.
