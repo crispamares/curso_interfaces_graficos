@@ -8,9 +8,9 @@
 	- QML y QtQuick
 	- La documentación de Qt
 
-- **1 Semana**
+- **1 Semana y 2 días**
 
->- El próximo **antes** de la clase. Revisamos todos en clase
+>- El próximo Jueves **antes** de la clase. Revisamos todos en clase
     - juan.morales@live.u-tad.com
 
 >- Cuanta más funcionalidad más nota
