@@ -17,3 +17,7 @@
 
 * [Ejercicio 2](practicas/todo-qml/guion.html)
 
+### Sesión 3 ###
+
+* [Dimensiones de la usabilidad](s03_usabilidad/s03_usabilidad.html)
+
