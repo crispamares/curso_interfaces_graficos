@@ -80,6 +80,8 @@
 * Con registro del test manual o con modificaciones en la herramienta (*logs*)
 * Por último, test estadísticos (*t-test*, *ANOVA*, ...)
 
+>* Ejemplo de informe: <http://www.usability.gov/how-to-and-tools/resources/templates/report-template-usability-test.html>
+
 # Casos de uso y estudios longitudinales
 
 ##
