@@ -21,3 +21,7 @@
 
 * [Dimensiones de la usabilidad](s03_usabilidad/s03_usabilidad.html)
 
+### Sesión 4 ###
+
+* [Evaluación](s04_evaluacion/s04_evaluacion.html)
+
