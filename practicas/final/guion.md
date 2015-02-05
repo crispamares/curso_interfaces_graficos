@@ -33,7 +33,7 @@ realización del trabajo.
    profesor con el objetivo de homogeneizar la dificultad de la
    práctica entre los alumnos.
 
-   Se recomienda **enviar cuanto** antes para tener el mayor tiempo
+	Se recomienda **enviar cuanto** antes para tener el mayor tiempo
    posible para la realización del diseño y la memoria.
 	
 2. Una vez aceptados los requisitos se procederá a la realización de
