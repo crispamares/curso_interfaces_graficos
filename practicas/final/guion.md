@@ -90,12 +90,12 @@ Se listaran las decisiones de diseño que se han tomado, las ideas
 desechadas, y las opciones que se podrían explorar pero por cualquier
 motivo se han dejado al margen.
 
-** Todas las decisiones deben estar sustentadas en las características
+**Todas las decisiones deben estar sustentadas en las características
    de usabilidad que hemos visto en clase y en los requisitos
    acordados**.
 
 En esta parte es donde vais a demostrar los conocimientos teóricos
-adquiridos en clase, ** tiene especial importancia **.
+adquiridos en clase, **tiene especial importancia**.
 
 #### Escenarios ####
 
