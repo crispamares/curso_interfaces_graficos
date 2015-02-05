@@ -25,3 +25,6 @@
 
 * [Evaluación](s04_evaluacion/s04_evaluacion.html)
 
+### Sesión 5 ###
+
+* [Práctica final](practicas/final/guion.html)
