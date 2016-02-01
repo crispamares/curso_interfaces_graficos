@@ -1,6 +1,6 @@
 % Introducción a QtQuick
 % Juan Morales del Olmo
-% 27 de enero de 2015
+% 9 de febrero de 2016
 
 # Introducción a QtQuick
 

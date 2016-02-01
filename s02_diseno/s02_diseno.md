@@ -1,6 +1,6 @@
 % Metodología de diseño de interfaces usables
 % Juan Morales del Olmo
-% 27 de enero de 2015
+% 9 de febrero de 2016
 
 # Interacción hombre-máquina
 

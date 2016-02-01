@@ -1,4 +1,4 @@
-# Curso Interfaces Gráficas 2015 #
+# Curso Interfaces Gráficas 2016 #
 
 ### Sesión 1 ###
 
@@ -9,7 +9,7 @@ oficial.
 Descripción de QtDesigner
 
 Primera práctica: Implementar el interfaz del TODO con QWidgets
-	- Se entrega en la siguiente sesión (Martes 27 Enero)
+	- Se entrega en la siguiente sesión (Martes 9 Febrero)
 
 #### Transparencias ####
 
@@ -26,11 +26,12 @@ diseño y evaluación temprana.
 Repaso y comentario de las implementaciones de la práctica 1
 
 Segunda práctica: Implementar el interfaz del TODO con QtQuick
-	- Se entrega en la sesión 4 (Martes 3 Febrero)
+	- Se entrega en la sesión 4 (Martes 22 Febrero)
 
 #### Transparencias ####
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+* [Metodología de diseño de interfaces usables](s02_diseno/s02_diseno.html)
+* [Introducción a QML](s02_diseno/s02_qml.html)
 
 ### Sesión 3 ###
 
@@ -38,7 +39,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 las dimensiones de la usabilidad.
 
 * Discusión y rediseño de una interfaz
-* 
+
 
 ### Sesión 4 ###
 

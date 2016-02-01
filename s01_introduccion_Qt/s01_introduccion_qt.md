@@ -1,6 +1,6 @@
 % Introducción a Qt
 % Juan Morales del Olmo
-% 20 de enero de 2015
+% 2 de febrero de 2016
 	
 # Introducción a Qt
 

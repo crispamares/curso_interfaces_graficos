@@ -8,7 +8,7 @@
 
 - **1 Mes**
 
-- Entrega final: **Jueves 5 de marzo a las 19:00** reviso e-mail
+- Entrega final: **Martes 29 de marzo a las 19:00** reviso e-mail
     - juan.morales@live.u-tad.com
 
 - **50% de la nota final de la asignatura**

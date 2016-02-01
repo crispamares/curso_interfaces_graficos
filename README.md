@@ -1,5 +1,5 @@
 
-# Curso Interfaces Gráficas 2015 #
+# Curso Interfaces Gráficas 2016 #
 
 ### Sesión 1 ###
 
