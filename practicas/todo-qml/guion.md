@@ -8,7 +8,7 @@
 	- QML y QtQuick
 	- La documentación de Qt
 
-- **1 Semana y 2 días**
+- **1 Semana**
 
 >- El próximo Jueves **antes** de la clase. Revisamos todos en clase
     - juan.morales@live.u-tad.com
@@ -22,21 +22,23 @@
 >1. Diseñar la interfaz como en la imágen
     - Utilizar los QtQuick Controls y Layouts
 	- ApplicationWindow
-	- Button
 	- ColumnLayout y RowLayout
 	- TextField
+	- Button
 	- ListView
 
 >2. Conectar la señar triggered de la acción del menú Quit:
-    - El javascript es: Qt.quit() 
+    - El javascript es: Qt.quit()
+	- Opcional: Añadir un shortcut "Ctrl+Q"
 
 ## Pasos sugeridos ##
 
->3. Reaccionar a la señal onClicked del botón: 
-    - Añadir el texto de la línea de entrada a la lista de tareas
+>3. Añadir el texto de la línea de entrada a la lista de tareas: 
+    - Reaccionando a la señal onClicked del botón
+	- Reaccionando a onAccepted del TextField
 
 >4. Borrar tareas de la lista:
-    - Reaccionar a Keys.onDeletedPressed
+    - Reaccionar a Keys.onDeletedPressed (focus: true necesario)
 
 >5. Crear un delegado para el ListView en otro fichero qml
     - Llamarlo Task.qml
