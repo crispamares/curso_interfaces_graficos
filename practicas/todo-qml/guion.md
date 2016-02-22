@@ -10,7 +10,7 @@
 
 - **1 Semana**
 
->- El próximo Jueves **antes** de la clase. Revisamos todos en clase
+>- El próximo Lunes **antes** de la clase. Revisamos todos en clase
     - juan.morales@live.u-tad.com
 
 >- Cuanta más funcionalidad más nota
