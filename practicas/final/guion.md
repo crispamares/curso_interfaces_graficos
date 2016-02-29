@@ -29,11 +29,11 @@ realización del trabajo.
 ### Pasos a dar ###
 
 1. Escribir los requisitos tal como se describen más adelante y
-   mandárselos al profesor por e-mail. Estos serán validados por le
+   mandárselos al profesor por e-mail. Estos serán validados por el
    profesor con el objetivo de homogeneizar la dificultad de la
    práctica entre los alumnos.
 
-	Se recomienda **enviar cuanto** antes para tener el mayor tiempo
+	Se recomienda **enviar cuanto antes** para tener el mayor tiempo
    posible para la realización del diseño y la memoria.
 	
 2. Una vez aceptados los requisitos se procederá a la realización de
@@ -116,7 +116,7 @@ ventanas deben ser incluidas así como una representación gráfica de
 cada animación (puede ser vídeo, gif, o varios snapshots de intervalos
 de la animación).
 
-No es necesario pero se considerará para subir nota, la entrega aparte
+No es necesario pero se considerará para subir nota, la entrega adicional
 de un prototipo interactivo, sin funcionalidad real pero sobre el que
 se puedan completar los guiones que marcan los escenarios.
 
